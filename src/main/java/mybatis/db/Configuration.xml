@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<properties resource="mybatis/db/db.properties"/>
+ 	<typeAliases>
+  		<typeAlias alias="BoardDto" type="reboard.data.BoardDto"/>
+ 	</typeAliases>
+	<environments default="development">
+		<environment id="development">
+			<transactionManager type="JDBC"/>
+			<dataSource type="POOLED">
+	   			<property name="driver" value="com.mysql.cj.jdbc.Driver"/>
+	   			<property name="url" value="jdbc:mysql://db-35k7vs-kr.vpc-pub-cdb.ntruss.com:3306/naverbbs?serverTimezone=Asia/Seoul"/>
+	   			<property name="username" value="naverbbs"/>
+	   			<property name="password" value="bitcamp!@#123"/>
+			</dataSource>
+		</environment>
+	</environments>
+ 	<mappers>
+  		<mapper resource="mybatis/db/BoardSql.xml"/>
+ 	</mappers>
+</configuration>
